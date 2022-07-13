@@ -18,3 +18,10 @@ def decode_word(word)
   letters.each { |letter| translated_word.push(decode_char(letter)) }
   translated_word.join
 end
+
+def morse_code(str)
+  translated_message = []
+  words = str.split('   ')
+  words.each { |word| translated_message.push(decode_word(word)) }
+  translated_message.join(' ')
+end
