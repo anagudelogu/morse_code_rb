@@ -5,4 +5,16 @@ def dictionary
                  '---', '.--.', '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-', '-.--', '--..']
   morse_array.zip(alphabet).to_h
 end
+
 DICTIONARY = dictionary
+
+def decode_char(char)
+  DICTIONARY[char]
+end
+
+def decode_word(word)
+  translated_word = []
+  letters = word.split
+  letters.each { |letter| translated_word.push(decode_char(letter)) }
+  translated_word.join
+end
